@@ -6,7 +6,8 @@ lang en_US.UTF-8
 keyboard us
 network --onboot yes --device eth0 --bootproto dhcp --noipv6 --hostname vladivostok
 timezone --utc Europe/Prague
-rootpw  --iscrypted $6$aAifaAc/4/nkK8zl$48lsl8sozakTM7TBBQnJMDNcjA6JKngsSj6mauikkIO38nSkQet9WG8CUD634ox0HX2n5UZ2s0sjQexfroyRD1
+#rootpw  --iscrypted $6$aAifaAc/4/nkK8zl$48lsl8sozakTM7TBBQnJMDNcjA6JKngsSj6mauikkIO38nSkQet9WG8CUD634ox0HX2n5UZ2s0sjQexfroyRD1
+rootpw  test
 selinux --enforcing
 skipx
 authconfig --enableshadow --passalgo=sha512

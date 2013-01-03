@@ -27,10 +27,10 @@ part biosboot --fstype=biosboot --size=1
 
 bootloader --location=mbr --timeout=5 --append="rhgb quiet"
 
-repo --name="Fedora 17 - x86_64"  --baseurl="http://download.fedoraproject.org/pub/fedora/linux/releases/17/Everything/x86_64/os/" --cost=1000
-repo --name="Fedora 17 - x86_64 - Updates"  --baseurl="http://download.fedoraproject.org/pub/fedora/linux/updates/17/x86_64/" --cost=1000
-#repo --name="Fedora - Aeolus - Testing"  --baseurl="http://repos.fedorapeople.org/repos/aeolus/conductor/testing/fedora-$releasever/$basearch/" --cost=1000
-repo --name="Fedora - Aeolus - Nightly"  --baseurl="http://virtlab30.virt.bos.redhat.com/aeolus-nightly/fedora-17/x86_64/" --cost=1000
+# repo --name="Fedora 17 - x86_64"  --baseurl="http://download.fedoraproject.org/pub/fedora/linux/releases/17/Everything/x86_64/os/" --cost=1000
+# repo --name="Fedora 17 - x86_64 - Updates"  --baseurl="http://download.fedoraproject.org/pub/fedora/linux/updates/17/x86_64/" --cost=1000
+# #repo --name="Fedora - Aeolus - Testing"  --baseurl="http://repos.fedorapeople.org/repos/aeolus/conductor/testing/fedora-$releasever/$basearch/" --cost=1000
+# repo --name="Fedora - Aeolus - Nightly"  --baseurl="http://virtlab30.virt.bos.redhat.com/aeolus-nightly/fedora-17/x86_64/" --cost=1000
 
 
 reboot
