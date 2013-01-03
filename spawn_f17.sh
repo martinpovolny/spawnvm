@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-VERSION=16
+VERSION=17
 IMG=f${VERSION}_$(date +%F-%H-%M)
 IMG_PATH='/home/vm'
 
