@@ -4,7 +4,7 @@
 install
 lang en_US.UTF-8
 keyboard us
-network --onboot yes --device eth0 --bootproto dhcp --noipv6 --hostname vladivostok
+network --onboot yes --device eth0 --bootproto dhcp --noipv6 --hostname miq
 timezone --utc Europe/Prague
 #rootpw  --iscrypted $6$aAifaAc/4/nkK8zl$48lsl8sozakTM7TBBQnJMDNcjA6JKngsSj6mauikkIO38nSkQet9WG8CUD634ox0HX2n5UZ2s0sjQexfroyRD1
 rootpw  test
@@ -19,19 +19,19 @@ firewall --service=ssh
 clearpart --all --initlabel --drives=vda
 
 part pv.252003 --grow --size=500
-volgroup vg_vladivostok --pesize=32768 pv.252003
-logvol swap --name=lv_swap --vgname=vg_vladivostok --grow --size=1008 --maxsize=2016
-logvol / --fstype=ext4 --name=lv_root --vgname=vg_vladivostok --grow --size=1024 --maxsize=51200
+volgroup vg_mig --pesize=32768 pv.252003
+logvol swap --name=lv_swap --vgname=vg_mig --grow --size=1008 --maxsize=2016
+logvol / --fstype=ext4 --name=lv_root --vgname=vg_mig --grow --size=1024 --maxsize=51200
 part /boot --fstype=ext4 --size=500
 part biosboot --fstype=biosboot --size=1
 
 bootloader --location=mbr --timeout=5 --append="rhgb quiet"
 
-repo --name="Fedora 17 - x86_64"  --baseurl="http://download.fedoraproject.org/pub/fedora/linux/releases/17/Everything/x86_64/os/" --cost=1000
-repo --name="Fedora 17 - x86_64 - Updates"  --baseurl="http://download.fedoraproject.org/pub/fedora/linux/updates/17/x86_64/" --cost=1000
-#repo --name="Fedora - Aeolus - Testing"  --baseurl="http://repos.fedorapeople.org/repos/aeolus/conductor/testing/fedora-$releasever/$basearch/" --cost=1000
-repo --name="Fedora - Aeolus - Nightly"  --baseurl="http://virtlab30.virt.bos.redhat.com/aeolus-nightly/fedora-17/x86_64/" --cost=1000
-
+#repo --name="Fedora 17 - x86_64"  --baseurl="http://download.fedoraproject.org/pub/fedora/linux/releases/17/Everything/x86_64/os/" --cost=1000
+#repo --name="Fedora 17 - x86_64 - Updates"  --baseurl="http://download.fedoraproject.org/pub/fedora/linux/updates/17/x86_64/" --cost=1000
+##repo --name="Fedora - Aeolus - Testing"  --baseurl="http://repos.fedorapeople.org/repos/aeolus/conductor/testing/fedora-$releasever/$basearch/" --cost=1000
+#repo --name="Fedora - Aeolus - Nightly"  --baseurl="http://virtlab30.virt.bos.redhat.com/aeolus-nightly/fedora-17/x86_64/" --cost=1000
+#
 
 reboot
 
@@ -41,17 +41,17 @@ reboot
 @development-tools
 #@development-libraries
 vim-enhanced
-aeolus-all
-aeolus-conductor-devel
+#aeolus-all
+#aeolus-conductor-devel
 bash-completion
 git-all
 wget
 %end
 
 %post --log=/root/post-log
-echo "Running post install config"
-echo "Running aeolus-configure"
-/usr/sbin/aeolus-configure -p mock,ec2
+#echo "Running post install config"
+#echo "Running aeolus-configure"
+#/usr/sbin/aeolus-configure -p mock,ec2
 #echo "Adding nfs mount"
 #echo 192.168.122.1:/home/mzatko/work/tasks /mnt nfs4 defaults 0 0 >> /etc/fstab
 

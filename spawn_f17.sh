@@ -9,8 +9,8 @@ echo $IMG
 virt-install --connect qemu:///system \
   -l http://download.fedoraproject.org/pub/fedora/linux/releases/$VERSION/Fedora/x86_64/os/ \
   -n $IMG \
-  --ram 1024 \
-  --disk path=${IMG_PATH}/$IMG,size=10 \
+  --ram 4096 \
+  --disk path=${IMG_PATH}/$IMG,size=20 \
   --initrd-inject=my${VERSION}.ks \
   --extra-args "ks=file:/my${VERSION}.ks" \
   --virt-type kvm \

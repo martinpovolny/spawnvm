@@ -7,7 +7,7 @@ IMG_PATH='/home/vm'
 echo $IMG
 
 virt-install --connect qemu:///system \
-  -l http://download.eng.brq.redhat.com/pub/fedora/linux/releases/test/18-Beta/Fedora/x86_64/os/ \
+  -l http://ftp.linux.cz/pub/linux/fedora-releases/18/fedora/x86_64/os/ \
   -n $IMG \
   --ram 1024 \
   --disk path=${IMG_PATH}/$IMG,size=10 \
